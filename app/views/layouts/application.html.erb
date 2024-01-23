@@ -16,11 +16,10 @@
         <%= link_to("TweetApp", "/") %>
       </div>
       <ul class="header-menus">
-        <% current_user = User.find_by(id: session[:user_id]) %>
 
-        <% if current_user %>
+        <% if @current_user %>
           <li>
-            <%= link_to(current_user.name, "/users/#{current_user.id}") %>
+            <%= link_to(@current_user.name, "/users/#{@current_user.id}") %>
           </li>
           <!-- ログインしている状態でヘッダーに表示するHTMLを貼り付けてください -->
           <li>
